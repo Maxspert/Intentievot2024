@@ -1,0 +1,257 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Votación</title>
+    <style>
+        /* ... El resto de tu estilo permanece igual ... */
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Cuenta atrás -->
+    <div id="countdown"></div>
+
+    <div class="container">
+        <!-- Formulario de votación -->
+        <div class="form-container">
+            <h1>Votare presidentiala 2024</h1>
+            <form id="votingForm">
+                <label for="name">Numele tau :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="officeNumber">Sectia de Votare :</label>
+                <input type="text" id="votingSection" name="votingSection" required>
+
+                <label for="serie">Serie de buletin :</label>
+                <input type="text" id="serie" name="serie" required>
+
+                <label for="country">Selectioneaza tara unde te afli :</label>
+                <select id="country" name="country" required>
+                    <option value="Rumanía">Rumanía</option>
+                    <option value="España">España</option>
+                    <option value="Francia">Francia</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Alemania">Alemania</option>
+                    <option value="Reino Unido">Reino Unido</option>
+                    <option value="Estados Unidos">Estados Unidos</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="México">México</option>
+                    <option value="Canadá">Canadá</option>
+                </select>
+
+                <label for="candidates">Selectioneaza candidatul :</label>
+                <select id="candidates" name="candidates" required>
+                    <option value="Elena-Valerica Lasconi">Elena-Valerica Lasconi</option>
+                    <option value="George-Nicolae Simion">George-Nicolae Simion</option>
+                    <option value="Ion-Marcel Ciolacu">Ion-Marcel Ciolacu</option>
+                    <option value="Nicolae-Ionel Ciucă">Nicolae-Ionel Ciucă</option>
+                    <option value="Kelemen Hunor">Kelemen Hunor</option>
+                    <option value="Mircea-Dan Geoană">Mircea-Dan Geoană</option>
+                    <option value="Ana Birchall">Ana Birchall</option>
+                    <option value="Alexandra-Beatrice Bertalan Păcuraru">Alexandra-Beatrice Bertalan Păcuraru</option>
+                    <option value="Sebastian-Constantin Popescu">Sebastian-Constantin Popescu</option>
+                    <option value="Ludovic Orban">Ludovic Orban</option>
+                    <option value="Călin Georgescu">Călin Georgescu</option>
+                    <option value="Cristian Diaconescu">Cristian Diaconescu</option>
+                    <option value="Cristian-Vasile Terheș">Cristian-Vasile Terheș</option>
+                    <option value="Silviu Predoiu">Silviu Predoiu</option>
+                </select>
+
+                <button type="submit" id="submitButton">Voteaza</button>
+            </form>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="statistics-container">
+            <h2>Statistica</h2>
+            <div id="candidatesStats">
+                <div class="candidatos-grid">
+                    <!-- Aquí deben estar los candidatos con imágenes y porcentajes -->
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Silviu_Predoiu.png" alt="Silviu Predoiu">
+                        <p class="candidato-number">14</p>
+                        <p>Silviu Predoiu</p>
+                        <p class="percentage">1%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Elena_Lasconi.png" alt="Elena-Valerica Lasconi">
+                        <p class="candidato-number">10</p>
+                        <p>Elena-Valerica Lasconi</p>
+                        <p class="percentage">0.83%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/George_Simion.png" alt="George-Nicolae Simion">
+                        <p class="candidato-number">15</p>
+                        <p>George-Nicolae Simion</p>
+                        <p class="percentage">1.25%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Ion_Ciolacu.png" alt="Ion-Marcel Ciolacu">
+                        <p class="candidato-number">25</p>
+                        <p>Ion-Marcel Ciolacu</p>
+                        <p class="percentage">2.08%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Nicolae_Ciuca.png" alt="Nicolae-Ionel Ciucă">
+                        <p class="candidato-number">13</p>
+                        <p>Nicolae-Ionel Ciucă</p>
+                        <p class="percentage">1.08%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Kelemen_Hunor.png" alt="Kelemen Hunor">
+                        <p class="candidato-number">8</p>
+                        <p>Kelemen Hunor</p>
+                        <p class="percentage">0.67%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Mircea_Geoana.png" alt="Mircea-Dan Geoană">
+                        <p class="candidato-number">5</p>
+                        <p>Mircea-Dan Geoană</p>
+                        <p class="percentage">0.42%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Ana_Birchall.png" alt="Ana Birchall">
+                        <p class="candidato-number">7</p>
+                        <p>Ana Birchall</p>
+                        <p class="percentage">0.58%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Alexandra_Bertalan.png" alt="Alexandra-Beatrice Bertalan Păcuraru">
+                        <p class="candidato-number">3</p>
+                        <p>Alexandra-Beatrice Bertalan Păcuraru</p>
+                        <p class="percentage">0.25%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Sebastian_Popescu.png" alt="Sebastian-Constantin Popescu">
+                        <p class="candidato-number">12</p>
+                        <p>Sebastian-Constantin Popescu</p>
+                        <p class="percentage">1%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Ludovic_Orban.png" alt="Ludovic Orban">
+                        <p class="candidato-number">9</p>
+                        <p>Ludovic Orban</p>
+                        <p class="percentage">0.75%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Calin_Georgescu.png" alt="Călin Georgescu">
+                        <p class="candidato-number">4</p>
+                        <p>Călin Georgescu</p>
+                        <p class="percentage">0.33%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Cristian_Diaconescu.png" alt="Cristian Diaconescu">
+                        <p class="candidato-number">2</p>
+                        <p>Cristian Diaconescu</p>
+                        <p class="percentage">0.17%</p>
+                    </div>
+                    <div class="candidato">
+                        <img src="imagenes_candidatos/Cristian_Terhes.png" alt="Cristian-Vasile Terheș">
+                        <p class="candidato-number">6</p>
+                        <p>Cristian-Vasile Terheș</p>
+                        <p class="percentage">0.5%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-left">
+        <h3>Estadísticas Totales</h3>
+        <p>Voturi total: 120</p>
+        <p>Voturi valabile: 110</p>
+        <p>Voturi nule: 10</p>
+    </div>
+
+    <script>
+        let countdownDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 1 día desde ahora
+
+        function updateCountdown() {
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Votul a expirat";
+            }
+        }
+
+        let x = setInterval(updateCountdown, 1000);
+
+        const candidates = [
+            { name: "Elena-Valerica Lasconi", votes: 0 },
+            { name: "George-Nicolae Simion", votes: 0 },
+            { name: "Ion-Marcel Ciolacu", votes: 0 },
+            { name: "Nicolae-Ionel Ciucă", votes: 0 },
+            { name: "Kelemen Hunor", votes: 0 },
+            { name: "Mircea-Dan Geoană", votes: 0 },
+            { name: "Ana Birchall", votes: 0 },
+            { name: "Alexandra-Beatrice Bertalan Păcuraru", votes: 0 },
+            { name: "Sebastian-Constantin Popescu", votes: 0 },
+            { name: "Ludovic Orban", votes: 0 },
+            { name: "Călin Georgescu", votes: 0 },
+            { name: "Cristian Diaconescu", votes: 0 },
+            { name: "Cristian-Vasile Terheș", votes: 0 },
+            { name: "Silviu Predoiu", votes: 0 }
+        ];
+
+        document.getElementById("votingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener los datos del formulario
+            const name = document.getElementById("name").value.trim();
+            const votingSection = document.getElementById("votingSection").value.trim();
+            const country = document.getElementById("country").value;
+            const serie = document.getElementById("serie").value.trim(); // Obtener la serie de buletin
+            const candidate = document.getElementById("candidates").value;
+
+            // Validar que todos los campos sean llenados
+            if (!serie) {
+                alert("Por favor ingresa la Serie de buletin.");
+                return;
+            }
+
+            // Crear un identificador único basado en el nombre, la oficina y la serie del buletín
+            const voterID = name + "_" + votingSection + "_" + country + "_" + serie;
+
+            // Verificar si ya ha votado
+            if (localStorage.getItem(voterID)) {
+                alert("Ya has votado anteriormente.");
+                return;
+            }
+
+            // Marcar al usuario como votante
+            localStorage.setItem(voterID, true);
+
+            // Incrementar los votos del candidato seleccionado
+            const candidateIndex = candidates.findIndex(c => c.name === candidate);
+            if (candidateIndex !== -1) {
+                candidates[candidateIndex].votes += 1;
+                alert("¡Gracias por votar!");
+                updateStatistics();
+            }
+        });
+
+        function updateStatistics() {
+            let totalVotes = candidates.reduce((total, candidate) => total + candidate.votes, 0);
+
+            candidates.forEach((candidate, index) => {
+                let percentage = (candidate.votes / totalVotes) * 100;
+                const candidateElem = document.querySelectorAll('.candidato')[index];
+                if (candidateElem) {
+                    candidateElem.querySelector('.percentage').textContent = percentage.toFixed(2) + '%';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
